@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Chart from './Chart'
-import { Grid, Row, Col } from 'react-bootstrap'
+import { Grid, Row, Col, PageHeader } from 'react-bootstrap'
 import data from './data'
 
 class App extends Component {
@@ -21,11 +21,11 @@ class App extends Component {
         <Grid>
           <Row>
             <Col xs={6}>
-              <div>Today</div>
+              <PageHeader>Today</PageHeader>
               <Chart type='hourly' data={data} />
             </Col>
             <Col xs={6}>
-              <div>This Month</div>
+              <PageHeader>This Month</PageHeader>
               <Chart type='monthly' data={data} />
             </Col>
           </Row>
