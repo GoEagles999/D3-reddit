@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import * as d3 from 'd3'
+import './chart.css'
 
 class Chart extends Component {
     generateChart(data) {
@@ -43,8 +44,9 @@ class Chart extends Component {
         .call(d3.axisLeft(yScale));
 
       const line = d3.line()
-        .x(function(d, i) { return xScale(d.key); })
+        .x(function(d) { return xScale(d.key); })
         .y(function(d) { return yScale(d.values.length); })
+				.curve(d3.curveStepAfter)
 
         //var dataset = d3.range(n).map(function(d) { return {"y": d3.randomUniform(1)() } })
         const dataset = data
